@@ -14,7 +14,7 @@ jot_LIB=	-lm
 all: apply jot
 
 %: %.c $(BSDINCDIR)
-	gcc $< -o $@ -isystem $(BSDINCDIR) -DLIBBSD_OVERLAY=1 -D__dead= -Wno-deprecated-declarations $(BSDLIB) $($@_LIB)
+	gcc $< -o $@ -isystem $(BSDINCDIR) -DLIBBSD_OVERLAY=1 -D__dead= $(BSDLIB) $($@_LIB)
 
 $(BSDINCDIR):
 	$(PKG_INSTALL) $(BSDLIB_PKG)
